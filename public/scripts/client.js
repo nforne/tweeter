@@ -45,6 +45,12 @@ $(document).ready(() => {
     return tweet;
   };
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = (dataArray) => {
     for (let i of dataArray.reverse()) {
       const $tweet = createTweetElement(i);
@@ -64,8 +70,10 @@ $(document).ready(() => {
     event.preventDefault();
     const $text = $('#tweet-text').val();
     if ($text.length > 0 && $text.length <= 140){ 
+      
+      const safeHTML = `<p>${escape($text)}</p>`;
 
-      $.ajax({ url: "/tweets", data: {'text': $text} , type: 'POST'})
+      $.ajax({ url: "/tweets", data: {'text': safeHTML} , type: 'POST'})
           .then(() => {
             loadTweets()
           })
