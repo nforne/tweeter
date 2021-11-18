@@ -55,8 +55,8 @@ $(document).ready(() => {
   const loadTweets = () => {
     $.ajax( {url: "/tweets", method: 'GET' })
       .then((res) => {
+        $('#tweetSpace').html('');
         setTimeout(renderTweets(res), 1000);
-        console.log(res);
       }); 
     }
 
@@ -66,12 +66,12 @@ $(document).ready(() => {
     if ($text.length > 0 && $text.length <= 140){ 
 
       $.ajax({ url: "/tweets", data: {'text': $text} , type: 'POST'})
-          .then((res) => {
-            console.log(res);
+          .then(() => {
+            loadTweets()
           })
       $('#tweet-text').val("");
       $('#tweet-text').focus();
-      loadTweets();
+      
     } else {
       alert('Blank submissions or more than 140 characters are not allowed!')
     }
@@ -83,14 +83,13 @@ $(document).ready(() => {
       const $text = $('#tweet-text').val()
       if ($text.length > 0 && $text.length <= 140){
         $( ".tweet-textf" ).submit();
-        loadTweets();
       } else {
         alert('Blank submissions or more than 140 characters are not allowed!')
       }
     }
   });
 
-  $(document).on('click keydown',(e) => {loadTweets();})
+  $(document).on('click keydown',() => {loadTweets();})
     
   loadTweets();
   
