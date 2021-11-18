@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" ></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+    
+      <nav>
+        <span class="span">tweeter</span>
+        <span class="navspanR">
+          <span class="nav span1" ><strong>Write</strong> a new tweet</span> 
+          <span class="nav span2"><i class="fas fa-angle-double-down"></i></span>  
+        </span>
+      </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+      
+      <header>
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>       
+          <h2 >nforne</h2>
+        </div>
+      </header>    
+
+    <!-- Page-specific (main) content here -->    
+      <main class="container">
+
+        <section class="new-tweet">
+
+          <h2>compose tweet</h2>
+          <form class="tweet-textf" method="POST" action="/tweets">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <hr class="line"> 
+            <div>
+              <button for="tweet-text" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+
+          <hr>
+          <h2>tweets</h2>
+
+          <div id='tweetSpace'>
+            <!-- tweets populated here -->
+          </div>
+
+        </section>
+
+      </main>
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
   </body>
 </html>

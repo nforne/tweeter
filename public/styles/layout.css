@@ -15,11 +15,31 @@ html {
  */
 
 body {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+
   color: #545149;
   background-color: #f4f1ec;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+  color: #545149;
+  background-color: #f4f1ec;
+  border: white;
+  position: relative;
+  z-index: 500;
+  margin-left: 5%;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}

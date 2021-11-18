@@ -1,0 +1,34 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Bungee', cursive;
+  height: 120px;
+  background-color: #4056A1;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  z-index: 1000;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  left: 0;
+}
+
+.navspanR {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-family:'Source Sans Pro', sans-serif;
+  font-style: normal;
+}
+.span {
+  color: #ffffff;
+}
+.span1 {
+  color:#ffffff;
+}
+.span2 {
+  color: red;
+}
