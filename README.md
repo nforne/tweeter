@@ -1,5 +1,5 @@
 #### Tweeter App
-## A single page responsive and hardened tweeter app built with node, express, ajax, css (scss), HTML and JavaScript
+## A simple single page responsive and hardened clone tweeter app built with Node, Express, AJAX, jQuerry, CSS3 (SCSS), HTML5 and JavaScript
 
 
 ### How to run it!
