@@ -116,3 +116,7 @@ $(document).ready(() => {
   setTimeout($('#err-msg').html(""), 5000)
   
 })
+
+$('#t-field').on('click', () => {
+  $( "#tweet-text" ).focus();
+})
