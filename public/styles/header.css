@@ -3,19 +3,20 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(206, 178, 22);
+  background-color: #ceb216;
   height: 400px;
   width: 100%;
   z-index: 500;
   background-color: gray;
   background-image: url("https://www.transparenttextures.com/patterns/food.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 header div img {
   height: 140px;
   margin-top: 120px;
 }
+
 header div h2 {
   color: white;
 }
