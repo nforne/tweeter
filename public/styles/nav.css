@@ -46,10 +46,9 @@ nav {
   position: fixed; /* Set the navbar to fixed position */
   bottom: 0; /* Position the navbar at the top of the page */
 }
+
 #scrollup:hover {
-  color:red;
-  scroll-behavior: smooth;
-  size: inherit;
+  color:green;
 }
 
 .n-avatr {

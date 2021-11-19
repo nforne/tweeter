@@ -120,3 +120,11 @@ $(document).ready(() => {
 $('#t-field').on('click', () => {
   $( "#tweet-text" ).focus();
 })
+
+$(document).on('scroll', () => {
+  $("#scrollup").attr('style', 'color: red;');
+});
+
+$(document).on('click keydown', () => {
+  $("#scrollup").attr('style', 'color: transparent;');
+});
