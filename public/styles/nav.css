@@ -32,3 +32,11 @@ nav {
 .span2 {
   color: red;
 }
+#t-field {
+  animation: ease-in-out;
+  background: inherit;
+  color:red;
+}
+#t-field:hover {
+  color: white;
+}
