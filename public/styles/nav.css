@@ -9,12 +9,9 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
   z-index: 1000;
-  position: fixed;
-  /* Set the navbar to fixed position */
-  top: 0;
-  /* Position the navbar at the top of the page */
-  width: 100%;
-  /* Full width */
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
   left: 0;
 }
 
@@ -53,9 +50,7 @@ nav {
   background: transparent;
   color: transparent;
   position: fixed;
-  /* Set the navbar to fixed position */
   bottom: 0;
-  /* Position the navbar at the top of the page */
 }
 
 #scrollup:hover {

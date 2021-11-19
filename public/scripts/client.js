@@ -3,11 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+//--------------------------------------------------------------------------------------------------
 $(document).ready(() => {
-  
-  // const fs = require('fs');
-  // const tweets_db  = JSON.parse(fs.readFileSync('../../server/data-files/initial-tweets.json'));
 
   const createTweetElement = (data) => {
     
@@ -45,6 +42,7 @@ $(document).ready(() => {
     return tweet;
   };
 
+//--------------------------------------------------------------------------------------------------
   const emptnsCheck = (text) => {
     let outPut = false;    
     for (let i of text.split('')) {
@@ -56,12 +54,14 @@ $(document).ready(() => {
     return outPut;
   };
 
+//--------------------------------------------------------------------------------------------------
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+//--------------------------------------------------------------------------------------------------
   const renderTweets = (dataArray) => {
     for (let i of dataArray.reverse()) {
       const $tweet = createTweetElement(i);
@@ -77,6 +77,7 @@ $(document).ready(() => {
       }); 
     }
 
+//--------------------------------------------------------------------------------------------------
   $( ".tweet-textf" ).submit(( event ) => {    
     event.preventDefault();
     const $text = $('#tweet-text').val();
@@ -95,8 +96,9 @@ $(document).ready(() => {
       $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
       $('#err-msg').slideDown(fast, setTimeout($('#err-msg').html(""), 5000));
     }
-  });  
+  }); 
 
+//--------------------------------------------------------------------------------------------------
   $( "#tweet-text" ).keydown((e) => {
     if(e.key === "Enter") {
       e.preventDefault();
@@ -110,21 +112,24 @@ $(document).ready(() => {
     }
   });
 
+//--------------------------------------------------------------------------------------------------
   $(document).on('click keydown',() => {loadTweets(); setTimeout($('#err-msg').html(""), 5000);})
     
   loadTweets();
   setTimeout($('#err-msg').html(""), 5000)
   
+//--------------------------------------------------------------------------------------------------
+  $('#t-field').on('click', () => {
+    $( "#tweet-text" ).focus();
+  })
+  
+  $(document).on('scroll', () => {
+    $("#scrollup").attr('style', 'color: red;');
+  });
+  
+  $(document).on('click keydown', () => {
+    $("#scrollup").attr('style', 'color: transparent;');
+  });
+
 })
 
-$('#t-field').on('click', () => {
-  $( "#tweet-text" ).focus();
-})
-
-$(document).on('scroll', () => {
-  $("#scrollup").attr('style', 'color: red;');
-});
-
-$(document).on('click keydown', () => {
-  $("#scrollup").attr('style', 'color: transparent;');
-});

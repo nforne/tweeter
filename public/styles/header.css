@@ -9,7 +9,6 @@ header {
   z-index: 500;
   background-color: gray;
   background-image: url("https://www.transparenttextures.com/patterns/food.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 header div img {
