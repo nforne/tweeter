@@ -6,6 +6,7 @@
   border-color: dashed black;
   margin-top: 0px;
   position: relative;
+  
 }
 .new-tweet form div {
   display: flex;
@@ -30,7 +31,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-content: inherit;
-  
+  margin-top: 0px;
+  position: relative;
 }
 .tweet-textf textarea {
   background-color:inherit;

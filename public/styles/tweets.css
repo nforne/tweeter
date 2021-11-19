@@ -75,3 +75,10 @@
 textbox {
   color: white;
 }
+#err-msg {
+  width: 100%;
+  color: red;
+  text-align:right;
+  z-index: 2000;
+  position: relative;
+}

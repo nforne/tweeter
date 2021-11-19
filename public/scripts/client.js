@@ -45,6 +45,17 @@ $(document).ready(() => {
     return tweet;
   };
 
+  const emptnsCheck = (text) => {
+    let outPut = false;    
+    for (let i of text.split('')) {
+      if (i !== ' ') {
+        outPut = true;
+        break;
+      }
+    }
+    return outPut;
+  };
+
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -69,7 +80,7 @@ $(document).ready(() => {
   $( ".tweet-textf" ).submit(( event ) => {    
     event.preventDefault();
     const $text = $('#tweet-text').val();
-    if ($text.length > 0 && $text.length <= 140){ 
+    if ($text.length > 0 && $text.length <= 140 && emptnsCheck($text)){ 
       
       const safeHTML = `<p>${escape($text)}</p>`;
 
@@ -81,7 +92,8 @@ $(document).ready(() => {
       $('#tweet-text').focus();
       
     } else {
-      alert('Blank submissions or more than 140 characters are not allowed!')
+      $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
+      $('#err-msg').slideDown(fast, setTimeout($('#err-msg').html(""), 5000));
     }
   });  
 
@@ -89,16 +101,18 @@ $(document).ready(() => {
     if(e.key === "Enter") {
       e.preventDefault();
       const $text = $('#tweet-text').val()
-      if ($text.length > 0 && $text.length <= 140){
+      if ($text.length > 0 && $text.length <= 140 && emptnsCheck($text)){
         $( ".tweet-textf" ).submit();
       } else {
-        alert('Blank submissions or more than 140 characters are not allowed!')
+        $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
+        $('#err-msg').slideDown(fast, setTimeout($('#err-msg').html(""), 5000));
       }
     }
   });
 
-  $(document).on('click keydown',() => {loadTweets();})
+  $(document).on('click keydown',() => {loadTweets(); setTimeout($('#err-msg').html(""), 5000);})
     
   loadTweets();
+  setTimeout($('#err-msg').html(""), 5000)
   
 })

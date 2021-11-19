@@ -32,33 +32,33 @@
   <body>
     <!-- Top nav bar (fixed) -->
     
-      <nav>
-        <span class="span">tweeter</span>
-        <span class="navspanR">
-          <span class="nav span1" ><strong>Write</strong> a new tweet</span> 
-          <span class="nav span2"><i class="fas fa-angle-double-down"></i></span>  
-        </span>
-      </nav>
-
-      
-      <header>
-        <div>
-            <img src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div>       
-          <h2 >nforne</h2>
-        </div>
-      </header>    
-
+    <nav>
+      <span class="span">tweeter</span>
+      <span class="navspanR">
+        <span class="nav span1" ><strong>Write</strong> a new tweet</span> 
+        <span class="nav span2"><i class="fas fa-angle-double-down"></i></span>  
+      </span>
+    </nav>
+    
+    
+    <header>
+      <div>
+        <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>       
+        <h2 >nforne</h2>
+      </div>
+    </header>    
+    
     <!-- Page-specific (main) content here -->    
-      <main class="container">
-
-        <section class="new-tweet">
-
-          <h2>compose tweet</h2>
-          <form class="tweet-textf" method="POST" action="/tweets">
-            <label for="tweet-text">What are you humming about?</label>
+    <main class="container">
+      
+      <section class="new-tweet">
+        <h2>compose tweet</h2>
+        <form class="tweet-textf" method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <div id="err-msg"></div>
             <textarea name="text" id="tweet-text"></textarea>
             <hr class="line"> 
             <div>
@@ -66,7 +66,7 @@
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
-
+          
           <hr>
           <h2>tweets</h2>
 
