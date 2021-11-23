@@ -94,7 +94,7 @@ $(document).ready(() => {
       
     } else {
       $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
-      $('#err-msg').slideDown(fast, setTimeout($('#err-msg').html(""), 5000));
+      $('#err-msg').slideDown(fast, $('#err-msg').html("").delay(5000));
     }
   }); 
 
@@ -107,21 +107,18 @@ $(document).ready(() => {
         $( ".tweet-textf" ).submit();
       } else {
         $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
-        $('#err-msg').slideDown(fast, setTimeout($('#err-msg').html(""), 5000));
+        $('#err-msg').slideDown(fast, $('#err-msg').html("").delay(5000));
       }
     }
   });
 
 //--------------------------------------------------------------------------------------------------
-  $(document).on('click keydown',() => {loadTweets(); setTimeout($('#err-msg').html(""), 5000);})
+  $(document).on('click keydown scroll',() => {loadTweets(); $('#err-msg').html("").delay(5000);})
     
   loadTweets();
-  setTimeout($('#err-msg').html(""), 5000)
   
 //--------------------------------------------------------------------------------------------------
-  $('#t-field').on('click', () => {
-    $( "#tweet-text" ).focus();
-  })
+
   
   $(document).on('scroll', () => {
     $("#scrollup").attr('style', 'color: red;');
@@ -129,6 +126,26 @@ $(document).ready(() => {
   
   $(document).on('click keydown', () => {
     $("#scrollup").attr('style', 'color: transparent;');
+  });
+
+  //--------------------------------------------------------------------------------------------------
+    
+  let view = false;
+  $("#t-field, #scrollup nav").on('click', () => {
+   
+    if (view) {
+      view = false
+      $("#flicker").slideUp(1000);
+    } else {
+      view = true      
+      $("#flicker").slideDown(10);
+      $('#tweet-text').focus();
+    }
+  });
+  
+  $("#tweet-text").on('blur', () => {    
+    $("#flicker").slideUp(1000).delay(7000);
+    view = false;
   });
 
 })

@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  // --- our code goes here ---
   let alertCount = 0;
   const $textarea = $("#tweet-text");
   const $counter = $(".counter");  
@@ -16,7 +15,7 @@ $(document).ready(() => {
       if (alertCount !== 1) {
         alertCount = 1;
         $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
-        $('#err-msg').slideDown(fast, setTimeout($('#err-msg').html(""), 5000));
+        $('#err-msg').slideDown(fast, $('#err-msg').html("").delay(5000));
       } else if (count - $text.length < 0 ) {
         $counter.attr('style', 'color: red;');     
         $counter.text(`${count - $text.length}`);

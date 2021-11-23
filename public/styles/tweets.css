@@ -50,6 +50,13 @@
 #tweetSkin {
   background-color: gray;
   border: 5px black dashed;
+  box-shadow: 2px 2px 2px 4px #000000;
+  z-index: 2000;
+
+}
+
+#tweetSkin:hover { 
+  box-shadow: 3px 3px 3px 5px #4056A1;
 }
 
 #tweettext {

@@ -36,7 +36,7 @@
       <span class="span">tweeter</span>
       <span class="navspanR">
         <span class="nav span1" ><strong>Write</strong> a new tweet</span> 
-        <span class="nav span2"><a href="#body" ><i id='t-field' class="fas fa-angle-double-down"></i></a></span> 
+        <span class="nav span2"><a  ><i id='t-field' class="fas fa-angle-double-down"></i></a></span> 
       </span>
     </nav>
     
@@ -52,20 +52,23 @@
     </header>    
     
     <!-- Page-specific (main) content here -->    
+    
     <main class="container">
       
       <section class="new-tweet">
-        <h2>compose tweet</h2>
-        <form class="tweet-textf" method="POST" action="/tweets">
-          <label for="tweet-text">What are you humming about?</label>
-          <div id="err-msg"></div>
-            <textarea name="text" id="tweet-text"></textarea>
-            <hr class="line"> 
-            <div>
-              <button for="tweet-text" type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
+        <div id="flicker" >
+          <h2>compose tweet</h2>
+          <form class="tweet-textf" method="POST" action="/tweets">
+            <label for="tweet-text">What are you humming about?</label>
+              <div id="err-msg"></div>
+              <textarea name="text" id="tweet-text"></textarea>
+              <hr class="line"> 
+              <div>
+                <button for="tweet-text" type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+        </div>
           
           <hr>
           <h2>tweets</h2>
@@ -77,7 +80,7 @@
           <hr class="line"> 
 
           <div class="n-avatr">
-            <a href="#body" id='scrollup'><i class="fas fa-chevron-circle-up"></i></a>
+            <a  ><i id='scrollup' class="fas fa-chevron-circle-up"></i></a>
           </div>
 
         </section>
