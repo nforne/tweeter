@@ -131,7 +131,7 @@ $(document).ready(() => {
   //--------------------------------------------------------------------------------------------------
     
   let view = false;
-  $("#t-field, #scrollup nav").on('click', () => {
+  $("#t-field, #scrollup").on('click', () => {
    
     if (view) {
       view = false
