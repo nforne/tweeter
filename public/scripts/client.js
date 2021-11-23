@@ -94,7 +94,7 @@ $(document).ready(() => {
       
     } else {
       $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
-      $('#err-msg').slideDown(fast, $('#err-msg').html("").delay(5000));
+      $('#err-msg').slideDown('fast', $('#err-msg').html("").delay(5000));
     }
   }); 
 
@@ -107,7 +107,7 @@ $(document).ready(() => {
         $( ".tweet-textf" ).submit();
       } else {
         $('#err-msg').html('Blank submissions or more than 140 characters are not allowed. Thank you!');
-        $('#err-msg').slideDown(fast, $('#err-msg').html("").delay(5000));
+        $('#err-msg').slideDown('fast', $('#err-msg').html("").delay(5000));
       }
     }
   });
@@ -130,7 +130,7 @@ $(document).ready(() => {
 
   //--------------------------------------------------------------------------------------------------
     
-  let view = false;
+  let view = true;
   $("#t-field, #scrollup").on('click', () => {
    
     if (view) {
