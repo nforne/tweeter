@@ -95,7 +95,7 @@ textbox {
 #err-msg {
   width: 100%;
   color: red;
-  text-align: left;
+  text-align: center;
   z-index: 2000;
   position: relative;
 }
